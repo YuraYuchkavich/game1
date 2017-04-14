@@ -15,8 +15,8 @@ canvas
 	display:block;
 	margin:30px auto 0px;
 }
-#player, #enemy, #stats
+#naruto, #enemy, #stats , #razmetka, #kakasi, #rasengan, #chedori, #chakra, #sacura
 {
 	display:block;
-	margin: -500px auto 0px;
+	margin: -600px auto 0px;
 }

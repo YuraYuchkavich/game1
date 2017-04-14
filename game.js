@@ -26,13 +26,16 @@ var mapX1 = gameWidth;
 
 
 var background = new Image();
-background.src = "fon1.png";
+background.src = "img/fonMain.png";
 
 var background1 = new Image();
-background1.src = "fon1.png";
+background1.src = "img/fonMain.png";
 
 var tiles = new Image();
 tiles.src = "player.png";
+
+var enemy1 = new Image();
+enemy1.src = "img/enemy1.png";
 
 
 var player;
@@ -269,11 +272,11 @@ function checkKeyUp(e)
 function Enemy()
 {
 	this.srcX = 0;
-	this.srcY = 140;
+	this.srcY = 0;
 	this.drawX = Math.floor(Math.random()*gameWidth)+gameWidth;
 	this.drawY = Math.floor(Math.random()*gameHeight);
-	this.width = 100;
-	this.height = 130;
+	this.width = 87;
+	this.height = 87;
 	
 	this.speed = 8;
 }
@@ -281,14 +284,16 @@ function Enemy()
 Enemy.prototype.draw = function()
 {
   	
-	ctxEnemy.drawImage(tiles,this.srcX,this.srcY,this.width,this.height,
+	ctxEnemy.drawImage(enemy1,this.srcX,this.srcY,this.width,this.height,
 					       this.drawX,this.drawY,this.width,this.height);
 
 }
 
 Enemy.prototype.update = function()
 {
+	 if (this.srcX<320) this.srcX += 87; else this.srcX =0;
 	this.drawX-=7; 
+	
 	if(this.drawX+this.width<0)
 	{
 		this.destroy();
